@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Header -->
+<%- include('partials/header') -%>
+
+    <body class="layout-fluid">
+        <div class="page">
+            <!-- Navbar -->
+            <%- include('partials/navbar') -%>
+                <div class="page-wrapper">
+                    <!-- Page body -->
+                    <div class="page-body">
+                        <div class="container-xl">
+                            <div class="row row-cards">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="table-responsive">
+                                            <table class="table card-table table-vcenter text-nowrap datatable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Creation Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% for (var i=0; i < buckets.length; i++) { %>
+                                                        <tr>
+                                                            <td>
+                                                                <a href="/bucket/<%= buckets[i].Name %>"
+                                                                    class="text-reset" tabindex="-1">
+                                                                    <%= buckets[i].Name %>
+                                                            </td>
+                                                            </a>
+                                                            <td>
+                                                                <%= buckets[i].CreationDate %>
+                                                            </td>
+                                                        </tr>
+                                                        <%}-%>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- Libs JS -->
+        <!-- Tabler Core -->
+        <script src="/js/tabler-v1.0.0-beta16.min.js" defer></script>
+    </body>
+
+</html>

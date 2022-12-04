@@ -1,0 +1,10 @@
+<header class="navbar navbar-expand-md navbar-light d-print-none">
+    <div class="container-xl">
+        <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
+            <li class="breadcrumb-item"><a href="/">S3 Explorer</a></li>
+            <% if (locals.bucketName) { %>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#"><%= bucketName %></a></li>
+            <% } %>
+        </ol>
+    </div>
+</header>
