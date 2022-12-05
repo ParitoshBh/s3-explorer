@@ -1,6 +1,6 @@
 {
   "name": "s3-explorer",
-  "version": "1.0.0-alpha1",
+  "version": "1.0.0-alpha2",
   "description": "Browse S3 buckets",
   "main": "dist/index.js",
   "scripts": {
