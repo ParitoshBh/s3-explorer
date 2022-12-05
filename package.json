@@ -1,6 +1,6 @@
 {
   "name": "@smblitz/s3explorer",
-  "version": "1.0.0-alpha3",
+  "version": "1.0.0-alpha4",
   "description": "Browse S3 buckets",
   "main": "dist/index.js",
   "bin": "./dist/index.js",
