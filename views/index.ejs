@@ -12,37 +12,11 @@
                     <!-- Page body -->
                     <div class="page-body">
                         <div class="container-xl">
-                            <div class="row row-cards">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="table-responsive">
-                                            <table class="table card-table table-vcenter text-nowrap datatable">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Name</th>
-                                                        <th>Creation Date</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <% for (var i=0; i < buckets.length; i++) { %>
-                                                        <tr>
-                                                            <td>
-                                                                <a href="/bucket/<%= buckets[i].Name %>"
-                                                                    class="text-reset" tabindex="-1">
-                                                                    <%= buckets[i].Name %>
-                                                            </td>
-                                                            </a>
-                                                            <td>
-                                                                <%= buckets[i].CreationDate %>
-                                                            </td>
-                                                        </tr>
-                                                        <%}-%>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <% if (buckets.length > 0) { %>
+                                <%- include('partials/bucket-list') -%>
+                            <% } else { %>
+                                <%- include('partials/no-results') -%>
+                            <% } %>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,14 @@
 import { Request, Response } from "express";
 import { ListObjectsCommand } from "@aws-sdk/client-s3";
 import { s3ClientObject } from '../utils/s3';
+import { ViewError } from '../interfaces/viewError';
 
 export const objectGet = async (req: Request, res: Response) => {
     const bucketName = req.params.bucketName;
-    let errorMessage = '';
+    const viewError: ViewError = {
+        message: 'No objects found',
+        context: '',
+    };
     let bucketObjects = {};
 
     try {
@@ -15,8 +19,12 @@ export const objectGet = async (req: Request, res: Response) => {
         );
         bucketObjects = s3Response.Contents ?? {};
     } catch (error) {
-        errorMessage = JSON.stringify(error, null, 2);
+        viewError.context = JSON.stringify(error, null, 2);
     }
 
-    res.render('objects', { objects: bucketObjects, bucketName: bucketName, errorMessage: errorMessage });
+    res.render('objects', {
+        objects: bucketObjects,
+        bucketName,
+        viewError,
+    });
 };

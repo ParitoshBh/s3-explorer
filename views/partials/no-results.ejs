@@ -13,14 +13,14 @@
             <path d="M3 3l18 18"></path>
         </svg>
     </div>
-    <p class="empty-title">No objects found</p>
+    <p class="empty-title"><%= viewError.message %></p>
 </div>
 
-<% if (errorMessage !=='' ) { %>
+<% if (viewError.context !== '' ) { %>
     <div class="container-xl">
         <div class="card-body">
             <div>
-                <pre><%= errorMessage %></pre>
+                <pre><%= viewError.context %></pre>
             </div>
         </div>
     </div>
