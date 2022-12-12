@@ -1,9 +1,9 @@
 {
   "name": "@smblitz/s3explorer",
-  "version": "1.0.0-alpha6",
+  "version": "1.0.0-alpha7",
   "description": "Browse S3 buckets",
-  "main": "dist/index.js",
-  "bin": "./dist/index.js",
+  "main": "dist/src/index.js",
+  "bin": "./dist/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc && echo \"$(echo -n '#!/usr/bin/env node\n\n'; cat ./dist/src/index.js)\" > ./dist/src/index.js",
