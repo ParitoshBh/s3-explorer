@@ -4,3 +4,5 @@ tsconfig.json
 tsconfig.prod.json
 .github
 scripts
+/assets
+/views
