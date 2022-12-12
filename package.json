@@ -1,21 +1,16 @@
 {
   "name": "@smblitz/s3explorer",
-  "version": "1.0.0-alpha7",
+  "version": "1.0.0-alpha8",
   "description": "Browse S3 buckets",
-  "main": "dist/src/index.js",
-  "bin": "./dist/src/index.js",
+  "main": "dist/index.js",
+  "bin": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc && echo \"$(echo -n '#!/usr/bin/env node\n\n'; cat ./dist/src/index.js)\" > ./dist/src/index.js",
+    "build": "rm -rfv dist && ./node_modules/typescript/bin/tsc --build tsconfig.prod.json && echo \"$(echo -n '#!/usr/bin/env node\n\n'; cat ./dist/index.js)\" > ./dist/index.js",
     "start": "node dist/index.js",
     "dev": "nodemon --exec 'node -r ts-node/register' ./src/index.ts -p tsconfig.json",
     "populateS3": "npx ts-node ./scripts/populateS3.ts -p tsconfig.json"
   },
-  "files": [
-    "dist",
-    "assets",
-    "views"
-  ],
   "keywords": [
     "s3",
     "explorer"

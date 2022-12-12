@@ -1,0 +1,6 @@
+.devcontainer
+.eslintrc.json
+tsconfig.json
+tsconfig.prod.json
+.github
+scripts
