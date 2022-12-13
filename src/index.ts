@@ -8,7 +8,7 @@ import path from 'path';
 
 const app = express();
 
-app.use(express.static('assets'))
+app.use(express.static(path.resolve(__dirname, '..', 'assets')))
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, '..', 'views'));
 
