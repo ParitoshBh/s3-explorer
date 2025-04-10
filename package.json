@@ -3,7 +3,6 @@
   "version": "1.0.0-alpha14",
   "description": "Browse S3 buckets",
   "author": "Paritosh Bhatia",
-  "private": true,
   "license": "MIT",
   "keywords": [
     "aws",
