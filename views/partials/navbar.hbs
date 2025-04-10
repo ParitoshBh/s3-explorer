@@ -2,9 +2,11 @@
     <div class="container-xl">
         <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
             <li class="breadcrumb-item"><a href="/">S3 Explorer</a></li>
-            <% if (locals.bucketName) { %>
-                <li class="breadcrumb-item active" aria-current="page"><a href="#"><%= bucketName %></a></li>
-            <% } %>
+            {{#if bucketName}}
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#">{{ bucketName }}</a>
+                </li>
+            {{/if}}
         </ol>
     </div>
 </header>

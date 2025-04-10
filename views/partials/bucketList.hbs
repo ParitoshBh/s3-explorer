@@ -1,0 +1,31 @@
+<div class="row row-cards">
+    <div class="col-12">
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table card-table table-vcenter text-nowrap datatable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Creation Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each buckets}}
+                            <tr>
+                                <td>
+                                    <a href="/bucket/{{ this.Name }}"
+                                        class="text-reset" tabindex="-1">
+                                        {{ this.Name }}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{ this.CreationDate }}
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

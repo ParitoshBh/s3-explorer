@@ -2,21 +2,21 @@
 <html lang="en">
 
 <!-- Header -->
-<%- include('partials/header') -%>
+{{> header}}
 
     <body class="layout-fluid">
         <div class="page">
             <!-- Navbar -->
-            <%- include('partials/navbar') -%>
+            {{> navbar}}
                 <div class="page-wrapper">
                     <!-- Page body -->
                     <div class="page-body">
                         <div class="container-xl">
-                            <% if (buckets.length > 0) { %>
-                                <%- include('partials/bucket-list') -%>
-                            <% } else { %>
-                                <%- include('partials/no-results') -%>
-                            <% } %>
+                            {{#if bucketCount}}
+                                {{> bucketList }}
+                            {{else}}
+                                {{> noResults}}
+                            {{/if}}
                         </div>
                     </div>
                 </div>
