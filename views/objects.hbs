@@ -2,20 +2,22 @@
 <html lang="en">
 
 <!-- Header -->
-<%- include('partials/header') -%>
+{{> header}}
+
     <body class="layout-fluid">
         <div class="page">
             <!-- Navbar -->
-            <%- include('partials/navbar') -%>
+            {{> navbar}}
+
             <div class="page-wrapper">
                 <!-- Page body -->
                 <div class="page-body">
                     <div class="container-xl">
-                        <% if (objects.length > 0) { %>
-                            <%- include('partials/object-list') -%>
-                        <% } else { %>
-                            <%- include('partials/no-results') -%>
-                        <% } %>
+                        {{#if objectCount}}
+                            {{> objectList }}
+                        {{else}}
+                            {{> noResults}}
+                        {{/if}}
                     </div>
                 </div>
             </div>

@@ -5,24 +5,29 @@
                 <table class="table card-table table-vcenter text-nowrap datatable">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Creation Date</th>
+                            <th>Key</th>
+                            <th>Last Modified</th>
+                            <th>ETag</th>
+                            <th>Size</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (var i=0; i < buckets.length; i++) { %>
+                        {{#each objects}}
                             <tr>
                                 <td>
-                                    <a href="/bucket/<%= buckets[i].Name %>"
-                                        class="text-reset" tabindex="-1">
-                                        <%= buckets[i].Name %>
+                                    {{ this.Key }}
                                 </td>
-                                </a>
                                 <td>
-                                    <%= buckets[i].CreationDate %>
+                                    {{ this.LastModified }}
+                                </td>
+                                <td>
+                                    {{ this.ETag }}
+                                </td>
+                                <td>
+                                    {{ this.Size }}
                                 </td>
                             </tr>
-                            <%}-%>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>

@@ -1,6 +1,8 @@
 .devcontainer
-.eslintrc.json
+.eslint.config.mjs
 tsconfig.json
-tsconfig.prod.json
+tsconfig.build.json
 .github
+.prettierrc
 scripts
+test
