@@ -1,6 +1,6 @@
 {
   "name": "@smblitz/s3explorer",
-  "version": "1.0.0-alpha13",
+  "version": "1.0.0-alpha14",
   "description": "Browse S3 buckets",
   "author": "Paritosh Bhatia",
   "private": true,
