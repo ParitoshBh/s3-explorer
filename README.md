@@ -2,6 +2,9 @@
 
 GUI for browsing S3 buckets, to facilitate local development. Currently tested against [localstack](https://github.com/localstack/localstack) and [MinIO](https://github.com/minio/minio).
 
+![Bucket List](screenshots/bucket_list.png)
+![Object Actions](screenshots/object_actions.png)
+
 ## Using Package
 
 To run the package using `npx` run following command,
@@ -18,7 +21,7 @@ npx @smblitz/s3explorer
 
 ### Supported Environment Variables
 
-- S3_PORT (optional, default `3000`)
+- PORT (optional, application port, defaults to `3000`)
 - S3_REGION (optional, default `us-east-1`)
 - S3_ENDPOINT (required)
 - S3_ACCESS_KEY_ID (required)
@@ -38,7 +41,7 @@ If you'd like to contribute to the package,
     export S3_SECRET_ACCESS_KEY=1234
 
     # start in watch mode
-    npm run start:dev
+    npm run nodemon
    ```
 
 If you'd like to populate Localstack S3 container (started when you open this repository in Visual Studio Code) with fake data then run following,

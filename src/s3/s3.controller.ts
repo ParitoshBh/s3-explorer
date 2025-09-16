@@ -1,4 +1,12 @@
-import { Controller, Get, Param, Render } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  Param,
+  Render,
+} from '@nestjs/common';
 import { S3Service } from './s3.service';
 
 @Controller()
@@ -15,6 +23,16 @@ export class S3Controller {
       errorMessage: 'No buckets found',
       errorContext: undefined,
     };
+  }
+
+  @Delete('buckets/:bucket/objects')
+  @HttpCode(204)
+  async deleteObjects(
+    @Param('bucket') bucket: string,
+    @Body() body: { keys: Array<string> },
+  ) {
+    await this.s3Service.deleteObjects(bucket, body.keys);
+    return;
   }
 
   @Get('bucket/:bucketName')
